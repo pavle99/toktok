@@ -1,6 +1,9 @@
 # TokTok
 
-![TokTok](https://<enter_image>.png)
+![Screenshot_1](https://user-images.githubusercontent.com/73827472/196044144-abf56468-d571-4dfd-aeb0-5506aa0a3c6a.png)
+![Screenshot_2](https://user-images.githubusercontent.com/73827472/196044145-9c42db64-00d0-491c-8ac2-742a3f2643d5.png)
+![Screenshot_4](https://user-images.githubusercontent.com/73827472/196044146-e0347cc9-344f-4b5d-b39e-44519436d706.png)
+
 
 ## Table of Contents
 
@@ -17,7 +20,7 @@ A responsive fullstack TikTok clone application built using Sanity.io and React 
 
 ## Link to website demo
 
-[TokTok](https:/<enter_url>/)
+[TokTok](https://toktok-pc.vercel.app/)
 
 ## Tech Stack
 
