@@ -50,37 +50,25 @@ const Profile = ({ data }: IProps) => {
             {user.userName.replaceAll(" ", "")}
             <GoVerified className="text-blue-400" />
           </p>
-          <p className="capitalize md:text-xl text-gray-400 text-xs">
-            {user.userName}
-          </p>
+          <p className="capitalize md:text-xl text-gray-400 text-xs">{user.userName}</p>
         </div>
       </div>
 
       <div>
         <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full">
-          <p
-            className={`text-xl font-semibold cursor-pointer mt-10 ${videos}`}
-            onClick={() => setShowUserVideos(true)}
-          >
+          <p className={`text-xl font-semibold cursor-pointer mt-10 ${videos}`} onClick={() => setShowUserVideos(true)}>
             Videos
           </p>
-          <p
-            className={`text-xl font-semibold cursor-pointer mt-10 ${liked}`}
-            onClick={() => setShowUserVideos(false)}
-          >
+          <p className={`text-xl font-semibold cursor-pointer mt-10 ${liked}`} onClick={() => setShowUserVideos(false)}>
             Liked
           </p>
         </div>
 
         <div className="flex gap-6 flex-wrap md:justify-start">
           {videosList.length > 0 ? (
-            videosList.map((post: Video, idx: number) => (
-              <VideoCard post={post} key={idx} />
-            ))
+            videosList.map((post: Video, idx: number) => <VideoCard post={post} key={idx} />)
           ) : (
-            <NoResults
-              text={`No ${showUserVideos ? "" : "liked"} videos yet`}
-            />
+            <NoResults text={`No ${showUserVideos ? "" : "liked"} videos yet`} />
           )}
         </div>
       </div>
@@ -88,11 +76,7 @@ const Profile = ({ data }: IProps) => {
   );
 };
 
-export const getServerSideProps = async ({
-  params: { id },
-}: {
-  params: { id: string };
-}) => {
+export const getServerSideProps = async ({ params: { id } }: { params: { id: string } }) => {
   const res = await axios.get(`${BASE_URL}/api/profile/${id}`);
 
   return {
