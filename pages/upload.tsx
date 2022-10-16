@@ -42,6 +42,10 @@ const Upload = () => {
         .then((data) => {
           setVideoAsset(data);
           setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
         });
     } else {
       setLoading(false);
