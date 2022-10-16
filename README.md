@@ -1,34 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TokTok
 
-## Getting Started
+![TokTok](https://<enter_image>.png)
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#prerequisites)
+- [Link to website demo](#installation)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the application](#running-the-application)
+
+## Introduction
+
+A responsive fullstack TikTok clone application built using Sanity.io and React framework Next.js, with modern design, Google Auth, the ability to upload, publish, share, comment on and like the videos as well as being able to filter by categories and have advanced search functionalities, profile pages and suggested accounts.
+
+## Link to website demo
+
+[TokTok](https:/<enter_url>/)
+
+## Tech Stack
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [Sanity.io](https://www.sanity.io/)
+- [Zustand](https://github.com/pmndrs/zustand/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Prerequisites
+
+Install the following prerequisites:
+
+1. [Node.js 18.17.0 or higher](https://nodejs.org/en/)
+2. [Visual Studio Code](https://code.visualstudio.com/download)
+
+## Installation
+
+### Backend
+
+#### 1. Install dependencies
+
+From the **root** directory run:
 
 ```bash
-npm run dev
-# or
-yarn dev
+cd sanity-backend
+npm install
+``` 
+
+#### 2. Start Sanity
+
+From the **root** directory run:
+
+```bash
+sanity start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 3. Get your project API key
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Go to [manage.sanity.io](https://manage.sanity.io/)
+2. Click on your project
+3. Click on the **Settings** tab
+4. Click on **API** on the left
+5. Click on **Create new token**
+6. Copy the token
+7. Paste it into the required variable inside the .env file
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Frontend
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### 1. Install dependencies
 
-## Learn More
+From the **root** directory run:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd frontend
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 2. Get Google Auth credentials API key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Go to [console.developers.google.com](https://console.developers.google.com/)
+2. Click on **Create Project**
+3. Go to that project
+4. Click on the left sidebar
+5. Go to **APIs and services**
+6. Go to **Credentials**
+7. Click on **Configure OAuth consent screen**
+8. Choose external
+9. Enter the name of your application
+10. Enter your email
+11. Click on **Save**
+12. Click on **Credentials** on the left
+13. Click on **Create Credentials**
+14. Choose **OAuth client ID**
+15. Choose **Web application**
+16. Enter the name of your application
+17. Enter the following in the **Authorized redirect URIs** and **Javascript origins** field: http://localhost http://localhost:3000/
+18. Click on **Create**
+19. Copy the **Client ID**
+20. Paste it into the required variable inside the .env file
 
-## Deploy on Vercel
+## Running the application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Since you already started sanity, all you need to do is run the frontend:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+cd frontend
+npm run dev
+```
